@@ -1,0 +1,497 @@
+[24642] DEBUG  Mar-26 14:30:59,337: 
+=====================================================================
+[24642] DEBUG  Mar-26 14:30:59,343: ====>> Starting Tabcmd 7.0 at Tue Mar 26 14:30:59 -0700 2013 <<====
+[24642] DEBUG  Mar-26 14:30:59,343: Build 7000.13.0201.1618
+[24642] DEBUG  Mar-26 14:31:01,302: No login cookie found at ./Tableau/tabcmd.txt
+[24642] DEBUG  Mar-26 14:31:01,354: run as: tabcmd login --server https://dataviz.mozilla.org --username bsullins --password ********
+[24642] INFO   Mar-26 14:31:01,368: Creating new session
+[24642] INFO   Mar-26 14:31:01,368:     Server:   https://dataviz.mozilla.org/
+[24642] INFO   Mar-26 14:31:01,368:     Username: bsullins
+[24642] DEBUG  Mar-26 14:31:01,370: Saved login cookie to ./Tableau/tabcmd.txt
+[24642] INFO   Mar-26 14:31:01,371: Connecting to server...
+[24642] DEBUG  Mar-26 14:31:02,550: Authenticity token: wEvcKbwHTVMrBiHAZeIndn/DBzO4seFHd/7VGj9CREM=
+[24642] INFO   Mar-26 14:31:02,553: Logging in...
+[24642] DEBUG  Mar-26 14:31:03,246: /manual/auth/login
+[24642] DEBUG  Mar-26 14:31:03,255: <?xml version="1.0" encoding="UTF-8"?>
+<authfailure>
+  <username>bsullins</username>
+</authfailure>
+
+[24642] DEBUG  Mar-26 14:31:03,256: Login error Net::HTTPServerException 401 "Unauthorized"
+[24642] FATAL  Mar-26 14:31:03,257: Incorrect username or password.
+[24642] DEBUG  Mar-26 14:31:03,257: file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/server_info.rb:749:in `send_password'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/server_info.rb:511:in `login'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/server_info.rb:519:in `login!'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/commands/login.rb:36:in `run'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/multicommand.rb:162:in `dispatch'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:41:in `run'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:47:in `(root)'
+org/jruby/RubyKernel.java:1063:in `load'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:1:in `(root)'
+org/jruby/RubyKernel.java:1038:in `require'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/META-INF/main.rb:29:in `require'
+<script>:3:in `(root)'
+[42473] DEBUG  Mar-27 08:04:24,431: 
+=====================================================================
+[42473] DEBUG  Mar-27 08:04:24,437: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:04:24 -0700 2013 <<====
+[42473] DEBUG  Mar-27 08:04:24,438: Build 7000.13.0201.1618
+[42473] DEBUG  Mar-27 08:04:26,351: run as: tabcmd login --server https://dataviz.mozilla.org --username bsullins --password ********
+[42473] INFO   Mar-27 08:04:26,364: Creating new session
+[42473] INFO   Mar-27 08:04:26,364:     Server:   https://dataviz.mozilla.org/
+[42473] INFO   Mar-27 08:04:26,365:     Username: bsullins
+[42473] DEBUG  Mar-27 08:04:26,366: Saved login cookie to ./Tableau/tabcmd.txt
+[42473] INFO   Mar-27 08:04:26,367: Connecting to server...
+[42473] DEBUG  Mar-27 08:04:27,266: Authenticity token: 2kQ0ryHgqY0A6I/ueOq+VKfUdofgmCo2T7eWZu59D9M=
+[42473] INFO   Mar-27 08:04:27,270: Logging in...
+[42473] DEBUG  Mar-27 08:04:28,144: Authenticity token: Mcf5Ou1vVoW39qLSapN18qZybZhWaExAl5bQswi1sZg=
+[42473] INFO   Mar-27 08:04:28,144: Login Succeeded.
+[42473] DEBUG  Mar-27 08:04:28,146: Saved login cookie to ./Tableau/tabcmd.txt
+[42481] DEBUG  Mar-27 08:04:32,130: 
+=====================================================================
+[42481] DEBUG  Mar-27 08:04:32,190: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:04:32 -0700 2013 <<====
+[42481] DEBUG  Mar-27 08:04:32,190: Build 7000.13.0201.1618
+[42481] DEBUG  Mar-27 08:04:33,854: run as: tabcmd addusers ldap --users /Applications/MAMP/htdocs/tableau-portal/users.csv
+[42481] INFO   Mar-27 08:04:33,869: Continuing previous session
+[42481] INFO   Mar-27 08:04:33,869:     Server:   https://dataviz.mozilla.org/
+[42481] INFO   Mar-27 08:04:33,869:     Username: bsullins
+[42481] INFO   Mar-27 08:04:33,873: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to group ldap...
+[42481] DEBUG  Mar-27 08:04:34,568: /manual/upload_add_or_remove_users/groups
+[42481] ERROR  Mar-27 08:04:34,585: /Applications/MAMP/htdocs/tableau-portal/users.csv does not contain any valid usernames
+User 'bsullins@mozilla.com' does not exist.
+Operation Canceled.
+[42481] DEBUG  Mar-27 08:04:34,586: Received ExitWithStatus, code 1
+[42481] DEBUG  Mar-27 08:04:34,586: file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/multicommand.rb:100:in `run_each'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/commands/addusers.rb:82:in `run'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/multicommand.rb:162:in `dispatch'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:41:in `run'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:47:in `(root)'
+org/jruby/RubyKernel.java:1063:in `load'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:1:in `(root)'
+org/jruby/RubyKernel.java:1038:in `require'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/META-INF/main.rb:29:in `require'
+<script>:3:in `(root)'
+[43400] DEBUG  Mar-27 08:28:10,131: 
+=====================================================================
+[43400] DEBUG  Mar-27 08:28:10,143: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:28:10 -0700 2013 <<====
+[43400] DEBUG  Mar-27 08:28:10,144: Build 7000.13.0201.1618
+[43400] DEBUG  Mar-27 08:28:12,350: run as: tabcmd login --server https://dataviz.mozilla.org --username bsullins --password ********
+[43400] INFO   Mar-27 08:28:12,490: Creating new session
+[43400] INFO   Mar-27 08:28:12,490:     Server:   https://dataviz.mozilla.org/
+[43400] INFO   Mar-27 08:28:12,500:     Username: bsullins
+[43400] DEBUG  Mar-27 08:28:12,510: Saved login cookie to ./Tableau/tabcmd.txt
+[43400] INFO   Mar-27 08:28:12,520: Connecting to server...
+[43400] DEBUG  Mar-27 08:28:12,898: Authenticity token: nr+Q6WZyRf0xV/njb2c+x3qLAwvclP02z/Ur02hVZ4k=
+[43400] INFO   Mar-27 08:28:12,901: Logging in...
+[43400] DEBUG  Mar-27 08:28:13,804: Authenticity token: IzViEAtJxTsLAZ70/gJJ9w8e4Kz9FoKU/NcDlTW4KkA=
+[43400] INFO   Mar-27 08:28:13,804: Login Succeeded.
+[43400] DEBUG  Mar-27 08:28:13,806: Saved login cookie to ./Tableau/tabcmd.txt
+[43405] DEBUG  Mar-27 08:28:17,958: 
+=====================================================================
+[43405] DEBUG  Mar-27 08:28:17,964: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:28:17 -0700 2013 <<====
+[43405] DEBUG  Mar-27 08:28:17,964: Build 7000.13.0201.1618
+[43405] DEBUG  Mar-27 08:28:19,855: run as: tabcmd addusers ldap --users /Applications/MAMP/htdocs/tableau-portal/users.csv
+[43405] INFO   Mar-27 08:28:19,871: Continuing previous session
+[43405] INFO   Mar-27 08:28:19,871:     Server:   https://dataviz.mozilla.org/
+[43405] INFO   Mar-27 08:28:19,871:     Username: bsullins
+[43405] INFO   Mar-27 08:28:19,876: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to group ldap...
+[43405] DEBUG  Mar-27 08:28:20,534: /manual/upload_add_or_remove_users/groups
+[43405] ERROR  Mar-27 08:28:20,550: /Applications/MAMP/htdocs/tableau-portal/users.csv does not contain any valid usernames
+User 'bsullins@mozilla.com' does not exist.
+Operation Canceled.
+[43405] DEBUG  Mar-27 08:28:20,550: Received ExitWithStatus, code 1
+[43405] DEBUG  Mar-27 08:28:20,551: file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/multicommand.rb:100:in `run_each'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/commands/addusers.rb:82:in `run'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/multicommand.rb:162:in `dispatch'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:41:in `run'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:47:in `(root)'
+org/jruby/RubyKernel.java:1063:in `load'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:1:in `(root)'
+org/jruby/RubyKernel.java:1038:in `require'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/META-INF/main.rb:29:in `require'
+<script>:3:in `(root)'
+[43586] DEBUG  Mar-27 08:32:20,548: 
+=====================================================================
+[43586] DEBUG  Mar-27 08:32:20,553: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:32:20 -0700 2013 <<====
+[43586] DEBUG  Mar-27 08:32:20,554: Build 7000.13.0201.1618
+[43586] DEBUG  Mar-27 08:32:22,441: run as: tabcmd login --server https://dataviz.mozilla.org --username bsullins --password ********
+[43586] INFO   Mar-27 08:32:22,455: Creating new session
+[43586] INFO   Mar-27 08:32:22,456:     Server:   https://dataviz.mozilla.org/
+[43586] INFO   Mar-27 08:32:22,456:     Username: bsullins
+[43586] DEBUG  Mar-27 08:32:22,458: Saved login cookie to ./Tableau/tabcmd.txt
+[43586] INFO   Mar-27 08:32:22,458: Connecting to server...
+[43586] DEBUG  Mar-27 08:32:23,348: Authenticity token: UaiK1q1+3evlF7C01QLYei4hCW0XWDzqvqzUpUmLGyg=
+[43586] INFO   Mar-27 08:32:23,351: Logging in...
+[43586] DEBUG  Mar-27 08:32:24,449: Authenticity token: MPF0C3tEgdQDV0khXhBNCbGBDHpWHJq8MPPl7o3ObKQ=
+[43586] INFO   Mar-27 08:32:24,449: Login Succeeded.
+[43586] DEBUG  Mar-27 08:32:24,451: Saved login cookie to ./Tableau/tabcmd.txt
+[43595] DEBUG  Mar-27 08:32:28,499: 
+=====================================================================
+[43595] DEBUG  Mar-27 08:32:28,504: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:32:28 -0700 2013 <<====
+[43595] DEBUG  Mar-27 08:32:28,505: Build 7000.13.0201.1618
+[43595] DEBUG  Mar-27 08:32:30,362: run as: tabcmd addusers ldap --users /Applications/MAMP/htdocs/tableau-portal/users.csv
+[43595] INFO   Mar-27 08:32:30,378: Continuing previous session
+[43595] INFO   Mar-27 08:32:30,378:     Server:   https://dataviz.mozilla.org/
+[43595] INFO   Mar-27 08:32:30,379:     Username: bsullins
+[43595] INFO   Mar-27 08:32:30,382: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to group ldap...
+[43595] DEBUG  Mar-27 08:32:31,650: /manual/upload_add_or_remove_users/groups
+[43595] ERROR  Mar-27 08:32:31,820: /Applications/MAMP/htdocs/tableau-portal/users.csv does not contain any valid usernames
+User 'bsullins@mozilla.com' does not exist.
+Operation Canceled.
+[43595] DEBUG  Mar-27 08:32:31,830: Received ExitWithStatus, code 1
+[43595] DEBUG  Mar-27 08:32:31,840: file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/multicommand.rb:100:in `run_each'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/commands/addusers.rb:82:in `run'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/multicommand.rb:162:in `dispatch'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:41:in `run'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:47:in `(root)'
+org/jruby/RubyKernel.java:1063:in `load'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:1:in `(root)'
+org/jruby/RubyKernel.java:1038:in `require'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/META-INF/main.rb:29:in `require'
+<script>:3:in `(root)'
+[44231] DEBUG  Mar-27 08:48:37,512: 
+=====================================================================
+[44231] DEBUG  Mar-27 08:48:37,518: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:48:37 -0700 2013 <<====
+[44231] DEBUG  Mar-27 08:48:37,518: Build 7000.13.0201.1618
+[44231] DEBUG  Mar-27 08:48:39,347: run as: tabcmd login --server https://dataviz.mozilla.org --username admin --password ********
+[44231] INFO   Mar-27 08:48:39,361: Creating new session
+[44231] INFO   Mar-27 08:48:39,361:     Server:   https://dataviz.mozilla.org/
+[44231] INFO   Mar-27 08:48:39,362:     Username: admin
+[44231] DEBUG  Mar-27 08:48:39,363: Saved login cookie to ./Tableau/tabcmd.txt
+[44231] INFO   Mar-27 08:48:39,364: Connecting to server...
+[44231] DEBUG  Mar-27 08:48:40,195: Authenticity token: qgk6E0AKL7dAG2s9Bq+2g5tK825hvMflaQjzMvEirYg=
+[44231] INFO   Mar-27 08:48:40,198: Logging in...
+[44231] DEBUG  Mar-27 08:48:41,250: Authenticity token: Vf/Vw3vU3dKH9ypGXXZR1dPB/PSJDGPMY1VIF+IAfws=
+[44231] INFO   Mar-27 08:48:41,251: Login Succeeded.
+[44231] DEBUG  Mar-27 08:48:41,252: Saved login cookie to ./Tableau/tabcmd.txt
+[44239] DEBUG  Mar-27 08:48:45,330: 
+=====================================================================
+[44239] DEBUG  Mar-27 08:48:45,390: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:48:45 -0700 2013 <<====
+[44239] DEBUG  Mar-27 08:48:45,390: Build 7000.13.0201.1618
+[44239] DEBUG  Mar-27 08:48:46,897: run as: tabcmd addusers ldap --users /Applications/MAMP/htdocs/tableau-portal/users.csv
+[44239] INFO   Mar-27 08:48:46,914: Continuing previous session
+[44239] INFO   Mar-27 08:48:46,914:     Server:   https://dataviz.mozilla.org/
+[44239] INFO   Mar-27 08:48:46,914:     Username: admin
+[44239] INFO   Mar-27 08:48:46,918: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to group ldap...
+[44239] DEBUG  Mar-27 08:48:47,630: /manual/upload_add_or_remove_users/groups
+[44239] ERROR  Mar-27 08:48:47,647: /Applications/MAMP/htdocs/tableau-portal/users.csv does not contain any valid usernames
+User 'bsullins@mozilla.com' does not exist.
+Operation Canceled.
+[44239] DEBUG  Mar-27 08:48:47,648: Received ExitWithStatus, code 1
+[44239] DEBUG  Mar-27 08:48:47,648: file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/multicommand.rb:100:in `run_each'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/commands/addusers.rb:82:in `run'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/lib/multicommand.rb:162:in `dispatch'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:41:in `run'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:47:in `(root)'
+org/jruby/RubyKernel.java:1063:in `load'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/tabcmd/bin/tabcmd.rb:1:in `(root)'
+org/jruby/RubyKernel.java:1038:in `require'
+file:/Applications/MAMP/htdocs/tableau-portal/tabcmd.jar!/META-INF/main.rb:29:in `require'
+<script>:3:in `(root)'
+[44385] DEBUG  Mar-27 08:52:22,751: 
+=====================================================================
+[44385] DEBUG  Mar-27 08:52:22,756: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:52:22 -0700 2013 <<====
+[44385] DEBUG  Mar-27 08:52:22,757: Build 7000.13.0201.1618
+[44385] DEBUG  Mar-27 08:52:24,770: run as: tabcmd login --server https://dataviz.mozilla.org --username admin --password ********
+[44385] INFO   Mar-27 08:52:24,784: Creating new session
+[44385] INFO   Mar-27 08:52:24,784:     Server:   https://dataviz.mozilla.org/
+[44385] INFO   Mar-27 08:52:24,785:     Username: admin
+[44385] DEBUG  Mar-27 08:52:24,786: Saved login cookie to ./Tableau/tabcmd.txt
+[44385] INFO   Mar-27 08:52:24,787: Connecting to server...
+[44385] DEBUG  Mar-27 08:52:25,635: Authenticity token: iOZaiPp0LO/VyoIvKGzDB+Llt4jVgtpPnU7EkrKLFGk=
+[44385] INFO   Mar-27 08:52:25,638: Logging in...
+[44385] DEBUG  Mar-27 08:52:26,648: Authenticity token: YZ9Qwa44UatNWYtWIdSZC8AJfemLGdqwOrmx5o284w8=
+[44385] INFO   Mar-27 08:52:26,648: Login Succeeded.
+[44385] DEBUG  Mar-27 08:52:26,650: Saved login cookie to ./Tableau/tabcmd.txt
+[44395] DEBUG  Mar-27 08:52:30,437: 
+=====================================================================
+[44395] DEBUG  Mar-27 08:52:30,442: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:52:30 -0700 2013 <<====
+[44395] DEBUG  Mar-27 08:52:30,443: Build 7000.13.0201.1618
+[44395] DEBUG  Mar-27 08:52:32,268: run as: tabcmd createusers /Applications/MAMP/htdocs/tableau-portal/users.csv
+[44395] INFO   Mar-27 08:52:32,288: Continuing previous session
+[44395] INFO   Mar-27 08:52:32,289:     Server:   https://dataviz.mozilla.org/
+[44395] INFO   Mar-27 08:52:32,289:     Username: admin
+[44395] INFO   Mar-27 08:52:32,293: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to server...
+[44395] INFO   Mar-27 08:52:33,173: Succeeded
+[44395] INFO   Mar-27 08:52:33,757: 0% complete
+[44395] INFO   Mar-27 08:52:44,277: 100% complete
+[44395] INFO   Mar-27 08:52:44,277: Finished processing users CSV file.
+Created 1 new user.
+
+Imported:
+bsullins@mozilla.com
+
+[44408] DEBUG  Mar-27 08:52:48,900: 
+=====================================================================
+[44408] DEBUG  Mar-27 08:52:48,950: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:52:48 -0700 2013 <<====
+[44408] DEBUG  Mar-27 08:52:48,960: Build 7000.13.0201.1618
+[44408] DEBUG  Mar-27 08:52:49,931: run as: tabcmd addusers ldap --users /Applications/MAMP/htdocs/tableau-portal/users.csv
+[44408] INFO   Mar-27 08:52:49,946: Continuing previous session
+[44408] INFO   Mar-27 08:52:49,947:     Server:   https://dataviz.mozilla.org/
+[44408] INFO   Mar-27 08:52:49,947:     Username: admin
+[44408] INFO   Mar-27 08:52:49,952: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to group ldap...
+[44408] INFO   Mar-27 08:52:50,899: Succeeded
+[44408] INFO   Mar-27 08:52:50,915: Added 1 user to group ldap
+[44533] DEBUG  Mar-27 08:56:09,197: 
+=====================================================================
+[44533] DEBUG  Mar-27 08:56:09,203: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:56:09 -0700 2013 <<====
+[44533] DEBUG  Mar-27 08:56:09,203: Build 7000.13.0201.1618
+[44533] DEBUG  Mar-27 08:56:11,700: run as: tabcmd login --server https://dataviz.mozilla.org --username admin --password ********
+[44533] INFO   Mar-27 08:56:11,830: Creating new session
+[44533] INFO   Mar-27 08:56:11,840:     Server:   https://dataviz.mozilla.org/
+[44533] INFO   Mar-27 08:56:11,840:     Username: admin
+[44533] DEBUG  Mar-27 08:56:11,860: Saved login cookie to ./Tableau/tabcmd.txt
+[44533] INFO   Mar-27 08:56:11,860: Connecting to server...
+[44533] DEBUG  Mar-27 08:56:12,900: Authenticity token: PWtuHq0elxoyuJo3h9oOMzgKturBiA45AZfUgSJunug=
+[44533] INFO   Mar-27 08:56:12,930: Logging in...
+[44533] DEBUG  Mar-27 08:56:13,730: Authenticity token: 6WUsG62CbXnrSz+Pgzjle23nHhXdS9wXvtiC+wiwnNE=
+[44533] INFO   Mar-27 08:56:13,730: Login Succeeded.
+[44533] DEBUG  Mar-27 08:56:13,750: Saved login cookie to ./Tableau/tabcmd.txt
+[44546] DEBUG  Mar-27 08:56:16,956: 
+=====================================================================
+[44546] DEBUG  Mar-27 08:56:16,961: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:56:16 -0700 2013 <<====
+[44546] DEBUG  Mar-27 08:56:16,961: Build 7000.13.0201.1618
+[44546] DEBUG  Mar-27 08:56:18,804: run as: tabcmd createusers /Applications/MAMP/htdocs/tableau-portal/users.csv
+[44546] INFO   Mar-27 08:56:18,825: Continuing previous session
+[44546] INFO   Mar-27 08:56:18,825:     Server:   https://dataviz.mozilla.org/
+[44546] INFO   Mar-27 08:56:18,826:     Username: admin
+[44546] INFO   Mar-27 08:56:18,830: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to server...
+[44546] INFO   Mar-27 08:56:19,503: Succeeded
+[44546] INFO   Mar-27 08:56:20,310: 0% complete
+[44546] INFO   Mar-27 08:56:30,485: 100% complete
+[44546] INFO   Mar-27 08:56:30,486: Finished processing users CSV file.
+Created 1 new user.
+
+Imported:
+bsullins@mozilla.com
+
+[44556] DEBUG  Mar-27 08:56:34,337: 
+=====================================================================
+[44556] DEBUG  Mar-27 08:56:34,342: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:56:34 -0700 2013 <<====
+[44556] DEBUG  Mar-27 08:56:34,342: Build 7000.13.0201.1618
+[44556] DEBUG  Mar-27 08:56:36,144: run as: tabcmd addusers ldap --users /Applications/MAMP/htdocs/tableau-portal/users.csv
+[44556] INFO   Mar-27 08:56:36,159: Continuing previous session
+[44556] INFO   Mar-27 08:56:36,159:     Server:   https://dataviz.mozilla.org/
+[44556] INFO   Mar-27 08:56:36,159:     Username: admin
+[44556] INFO   Mar-27 08:56:36,163: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to group ldap...
+[44556] INFO   Mar-27 08:56:36,898: Succeeded
+[44556] INFO   Mar-27 08:56:36,914: Added 1 user to group ldap
+[44642] DEBUG  Mar-27 08:58:46,985: 
+=====================================================================
+[44642] DEBUG  Mar-27 08:58:46,990: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:58:46 -0700 2013 <<====
+[44642] DEBUG  Mar-27 08:58:46,990: Build 7000.13.0201.1618
+[44642] DEBUG  Mar-27 08:58:48,834: run as: tabcmd login --server https://dataviz.mozilla.org --username admin --password ********
+[44642] INFO   Mar-27 08:58:48,847: Creating new session
+[44642] INFO   Mar-27 08:58:48,848:     Server:   https://dataviz.mozilla.org/
+[44642] INFO   Mar-27 08:58:48,848:     Username: admin
+[44642] DEBUG  Mar-27 08:58:48,849: Saved login cookie to ./Tableau/tabcmd.txt
+[44642] INFO   Mar-27 08:58:48,850: Connecting to server...
+[44642] DEBUG  Mar-27 08:58:49,737: Authenticity token: gSFXJ73bt/iAFXnF6CWTLnrAhFOsC/K026PeQWJ+7VQ=
+[44642] INFO   Mar-27 08:58:49,740: Logging in...
+[44642] DEBUG  Mar-27 08:58:50,748: Authenticity token: TcXGcl7CJCR9YxsACYUJ0c0Lzjh+8HW5df+SUZUcy1Y=
+[44642] INFO   Mar-27 08:58:50,749: Login Succeeded.
+[44642] DEBUG  Mar-27 08:58:50,750: Saved login cookie to ./Tableau/tabcmd.txt
+[44652] DEBUG  Mar-27 08:58:54,585: 
+=====================================================================
+[44652] DEBUG  Mar-27 08:58:54,590: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:58:54 -0700 2013 <<====
+[44652] DEBUG  Mar-27 08:58:54,591: Build 7000.13.0201.1618
+[44652] DEBUG  Mar-27 08:58:56,432: run as: tabcmd createusers /Applications/MAMP/htdocs/tableau-portal/users.csv
+[44652] INFO   Mar-27 08:58:56,457: Continuing previous session
+[44652] INFO   Mar-27 08:58:56,457:     Server:   https://dataviz.mozilla.org/
+[44652] INFO   Mar-27 08:58:56,458:     Username: admin
+[44652] INFO   Mar-27 08:58:56,464: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to server...
+[44652] INFO   Mar-27 08:58:57,350: Succeeded
+[44652] INFO   Mar-27 08:58:57,817: 0% complete
+[44652] INFO   Mar-27 08:59:08,263: 100% complete
+[44652] INFO   Mar-27 08:59:08,264: Finished processing users CSV file.
+Created 1 new user.
+
+Imported:
+bsullins@mozilla.com
+
+[44663] DEBUG  Mar-27 08:59:12,154: 
+=====================================================================
+[44663] DEBUG  Mar-27 08:59:12,159: ====>> Starting Tabcmd 7.0 at Wed Mar 27 08:59:12 -0700 2013 <<====
+[44663] DEBUG  Mar-27 08:59:12,159: Build 7000.13.0201.1618
+[44663] DEBUG  Mar-27 08:59:13,961: run as: tabcmd addusers ldap --users /Applications/MAMP/htdocs/tableau-portal/users.csv
+[44663] INFO   Mar-27 08:59:13,977: Continuing previous session
+[44663] INFO   Mar-27 08:59:13,977:     Server:   https://dataviz.mozilla.org/
+[44663] INFO   Mar-27 08:59:13,977:     Username: admin
+[44663] INFO   Mar-27 08:59:13,983: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to group ldap...
+[44663] INFO   Mar-27 08:59:14,683: Succeeded
+[44663] INFO   Mar-27 08:59:14,699: Added 1 user to group ldap
+[45428] DEBUG  Mar-27 09:20:35,404: 
+=====================================================================
+[45428] DEBUG  Mar-27 09:20:35,409: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:20:35 -0700 2013 <<====
+[45428] DEBUG  Mar-27 09:20:35,409: Build 7000.13.0201.1618
+[45428] DEBUG  Mar-27 09:20:37,243: run as: tabcmd login --server https://dataviz.mozilla.org --username admin --password ********
+[45428] INFO   Mar-27 09:20:37,256: Creating new session
+[45428] INFO   Mar-27 09:20:37,256:     Server:   https://dataviz.mozilla.org/
+[45428] INFO   Mar-27 09:20:37,257:     Username: admin
+[45428] DEBUG  Mar-27 09:20:37,258: Saved login cookie to ./Tableau/tabcmd.txt
+[45428] INFO   Mar-27 09:20:37,259: Connecting to server...
+[45428] DEBUG  Mar-27 09:20:38,162: Authenticity token: kTXkijuv4IbNlB+XVdaDJ1cNUKdmvzzNSwmMpGSMtqE=
+[45428] INFO   Mar-27 09:20:38,165: Logging in...
+[45428] DEBUG  Mar-27 09:20:38,997: Authenticity token: APUibyF1ASZRU5bn3lP6STLcLypTlCv5oK9PufceJ3k=
+[45428] INFO   Mar-27 09:20:38,998: Login Succeeded.
+[45428] DEBUG  Mar-27 09:20:39,0: Saved login cookie to ./Tableau/tabcmd.txt
+[45433] DEBUG  Mar-27 09:20:42,942: 
+=====================================================================
+[45433] DEBUG  Mar-27 09:20:42,948: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:20:42 -0700 2013 <<====
+[45433] DEBUG  Mar-27 09:20:42,948: Build 7000.13.0201.1618
+[45433] DEBUG  Mar-27 09:20:44,767: run as: tabcmd createusers /Applications/MAMP/htdocs/tableau-portal/users.csv
+[45433] INFO   Mar-27 09:20:44,787: Continuing previous session
+[45433] INFO   Mar-27 09:20:44,787:     Server:   https://dataviz.mozilla.org/
+[45433] INFO   Mar-27 09:20:44,788:     Username: admin
+[45433] INFO   Mar-27 09:20:44,791: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to server...
+[45433] INFO   Mar-27 09:20:45,505: Succeeded
+[45433] INFO   Mar-27 09:20:45,951: 0% complete
+[45433] INFO   Mar-27 09:20:56,404: 100% complete
+[45433] INFO   Mar-27 09:20:56,405: Finished processing users CSV file.
+Created 1 new user.
+
+Imported:
+bsullins@mozilla.com
+
+[45447] DEBUG  Mar-27 09:21:00,232: 
+=====================================================================
+[45447] DEBUG  Mar-27 09:21:00,238: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:21:00 -0700 2013 <<====
+[45447] DEBUG  Mar-27 09:21:00,238: Build 7000.13.0201.1618
+[45447] DEBUG  Mar-27 09:21:02,115: run as: tabcmd addusers ldap --users /Applications/MAMP/htdocs/tableau-portal/users.csv
+[45447] INFO   Mar-27 09:21:02,131: Continuing previous session
+[45447] INFO   Mar-27 09:21:02,132:     Server:   https://dataviz.mozilla.org/
+[45447] INFO   Mar-27 09:21:02,132:     Username: admin
+[45447] INFO   Mar-27 09:21:02,137: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to group ldap...
+[45447] INFO   Mar-27 09:21:02,827: Succeeded
+[45447] INFO   Mar-27 09:21:02,845: Added 1 user to group ldap
+[45648] DEBUG  Mar-27 09:26:31,438: 
+=====================================================================
+[45648] DEBUG  Mar-27 09:26:31,443: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:26:31 -0700 2013 <<====
+[45648] DEBUG  Mar-27 09:26:31,443: Build 7000.13.0201.1618
+[45648] DEBUG  Mar-27 09:26:33,367: run as: tabcmd login --server https://dataviz.mozilla.org --username admin --password ********
+[45648] INFO   Mar-27 09:26:33,382: Creating new session
+[45648] INFO   Mar-27 09:26:33,383:     Server:   https://dataviz.mozilla.org/
+[45648] INFO   Mar-27 09:26:33,383:     Username: admin
+[45648] DEBUG  Mar-27 09:26:33,385: Saved login cookie to ./Tableau/tabcmd.txt
+[45648] INFO   Mar-27 09:26:33,385: Connecting to server...
+[45648] DEBUG  Mar-27 09:26:34,172: Authenticity token: iaJpnY2ewQrFUrLfFN/jrqIAltf/xzNodeppzvcBRWo=
+[45648] INFO   Mar-27 09:26:34,175: Logging in...
+[45648] DEBUG  Mar-27 09:26:35,222: Authenticity token: 4h044G6IF/bpWquAJMEC/VVGEVcPEjQeEeJWHI/vwyM=
+[45648] INFO   Mar-27 09:26:35,222: Login Succeeded.
+[45648] DEBUG  Mar-27 09:26:35,224: Saved login cookie to ./Tableau/tabcmd.txt
+[45653] DEBUG  Mar-27 09:26:39,880: 
+=====================================================================
+[45653] DEBUG  Mar-27 09:26:39,930: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:26:39 -0700 2013 <<====
+[45653] DEBUG  Mar-27 09:26:39,930: Build 7000.13.0201.1618
+[45653] DEBUG  Mar-27 09:26:40,923: run as: tabcmd createusers /Applications/MAMP/htdocs/tableau-portal/users.csv
+[45653] INFO   Mar-27 09:26:40,944: Continuing previous session
+[45653] INFO   Mar-27 09:26:40,944:     Server:   https://dataviz.mozilla.org/
+[45653] INFO   Mar-27 09:26:40,944:     Username: admin
+[45653] INFO   Mar-27 09:26:40,948: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to server...
+[45653] INFO   Mar-27 09:26:41,746: Succeeded
+[45653] INFO   Mar-27 09:26:42,283: 0% complete
+[45653] INFO   Mar-27 09:26:52,743: 100% complete
+[45653] INFO   Mar-27 09:26:52,744: Finished processing users CSV file.
+Created 1 new user.
+
+Imported:
+bsullins@mozilla.com
+
+[45667] DEBUG  Mar-27 09:26:56,565: 
+=====================================================================
+[45667] DEBUG  Mar-27 09:26:56,570: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:26:56 -0700 2013 <<====
+[45667] DEBUG  Mar-27 09:26:56,571: Build 7000.13.0201.1618
+[45667] DEBUG  Mar-27 09:26:58,408: run as: tabcmd addusers ldap --users /Applications/MAMP/htdocs/tableau-portal/users.csv
+[45667] INFO   Mar-27 09:26:58,424: Continuing previous session
+[45667] INFO   Mar-27 09:26:58,425:     Server:   https://dataviz.mozilla.org/
+[45667] INFO   Mar-27 09:26:58,425:     Username: admin
+[45667] INFO   Mar-27 09:26:58,429: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to group ldap...
+[45667] INFO   Mar-27 09:26:59,477: Succeeded
+[45667] INFO   Mar-27 09:26:59,494: Added 1 user to group ldap
+[45754] DEBUG  Mar-27 09:29:14,200: 
+=====================================================================
+[45754] DEBUG  Mar-27 09:29:14,205: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:29:14 -0700 2013 <<====
+[45754] DEBUG  Mar-27 09:29:14,205: Build 7000.13.0201.1618
+[45754] DEBUG  Mar-27 09:29:16,440: run as: tabcmd login --server https://dataviz.mozilla.org --username admin --password ********
+[45754] INFO   Mar-27 09:29:16,580: Creating new session
+[45754] INFO   Mar-27 09:29:16,580:     Server:   https://dataviz.mozilla.org/
+[45754] INFO   Mar-27 09:29:16,580:     Username: admin
+[45754] DEBUG  Mar-27 09:29:16,600: Saved login cookie to ./Tableau/tabcmd.txt
+[45754] INFO   Mar-27 09:29:16,610: Connecting to server...
+[45754] DEBUG  Mar-27 09:29:16,971: Authenticity token: VZx8XV+5uT/Ox+drp1hweWT01Qiclmf/u9HnlLUWstE=
+[45754] INFO   Mar-27 09:29:16,974: Logging in...
+[45754] DEBUG  Mar-27 09:29:17,798: Authenticity token: 8klqhLXogirfji+M2M5gc7yQ+u6pvPx7vE3RLG/Np2k=
+[45754] INFO   Mar-27 09:29:17,799: Login Succeeded.
+[45754] DEBUG  Mar-27 09:29:17,800: Saved login cookie to ./Tableau/tabcmd.txt
+[45760] DEBUG  Mar-27 09:29:21,860: 
+=====================================================================
+[45760] DEBUG  Mar-27 09:29:21,865: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:29:21 -0700 2013 <<====
+[45760] DEBUG  Mar-27 09:29:21,865: Build 7000.13.0201.1618
+[45760] DEBUG  Mar-27 09:29:23,726: run as: tabcmd createusers /Applications/MAMP/htdocs/tableau-portal/users.csv
+[45760] INFO   Mar-27 09:29:23,748: Continuing previous session
+[45760] INFO   Mar-27 09:29:23,748:     Server:   https://dataviz.mozilla.org/
+[45760] INFO   Mar-27 09:29:23,748:     Username: admin
+[45760] INFO   Mar-27 09:29:23,752: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to server...
+[45760] INFO   Mar-27 09:29:24,429: Succeeded
+[45760] INFO   Mar-27 09:29:24,874: 0% complete
+[45760] INFO   Mar-27 09:29:35,325: 100% complete
+[45760] INFO   Mar-27 09:29:35,325: Finished processing users CSV file.
+Created 1 new user.
+
+Imported:
+bsullins@mozilla.com
+
+[45774] DEBUG  Mar-27 09:29:39,153: 
+=====================================================================
+[45774] DEBUG  Mar-27 09:29:39,158: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:29:39 -0700 2013 <<====
+[45774] DEBUG  Mar-27 09:29:39,158: Build 7000.13.0201.1618
+[45774] DEBUG  Mar-27 09:29:40,976: run as: tabcmd addusers ldap --users /Applications/MAMP/htdocs/tableau-portal/users.csv
+[45774] INFO   Mar-27 09:29:40,992: Continuing previous session
+[45774] INFO   Mar-27 09:29:40,992:     Server:   https://dataviz.mozilla.org/
+[45774] INFO   Mar-27 09:29:40,993:     Username: admin
+[45774] INFO   Mar-27 09:29:40,997: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to group ldap...
+[45774] INFO   Mar-27 09:29:41,758: Succeeded
+[45774] INFO   Mar-27 09:29:41,776: Added 1 user to group ldap
+[45802] DEBUG  Mar-27 09:30:17,302: 
+=====================================================================
+[45802] DEBUG  Mar-27 09:30:17,307: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:30:17 -0700 2013 <<====
+[45802] DEBUG  Mar-27 09:30:17,307: Build 7000.13.0201.1618
+[45802] DEBUG  Mar-27 09:30:19,173: run as: tabcmd login --server https://dataviz.mozilla.org --username admin --password ********
+[45802] INFO   Mar-27 09:30:19,186: Creating new session
+[45802] INFO   Mar-27 09:30:19,187:     Server:   https://dataviz.mozilla.org/
+[45802] INFO   Mar-27 09:30:19,187:     Username: admin
+[45802] DEBUG  Mar-27 09:30:19,189: Saved login cookie to ./Tableau/tabcmd.txt
+[45802] INFO   Mar-27 09:30:19,189: Connecting to server...
+[45802] DEBUG  Mar-27 09:30:20,209: Authenticity token: vmtQ5dELyreRRpiWrBa0UBWcK8ILeoyrivHRg6BXcU8=
+[45802] INFO   Mar-27 09:30:20,213: Logging in...
+[45802] DEBUG  Mar-27 09:30:21,237: Authenticity token: OCKXJEOq1sCttcwkqfyYGe77IN9XBv4rJ5Nc68B5iRs=
+[45802] INFO   Mar-27 09:30:21,237: Login Succeeded.
+[45802] DEBUG  Mar-27 09:30:21,239: Saved login cookie to ./Tableau/tabcmd.txt
+[45808] DEBUG  Mar-27 09:30:25,830: 
+=====================================================================
+[45808] DEBUG  Mar-27 09:30:25,880: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:30:25 -0700 2013 <<====
+[45808] DEBUG  Mar-27 09:30:25,880: Build 7000.13.0201.1618
+[45808] DEBUG  Mar-27 09:30:26,994: run as: tabcmd createusers /Applications/MAMP/htdocs/tableau-portal/users.csv
+[45808] INFO   Mar-27 09:30:27,140: Continuing previous session
+[45808] INFO   Mar-27 09:30:27,140:     Server:   https://dataviz.mozilla.org/
+[45808] INFO   Mar-27 09:30:27,140:     Username: admin
+[45808] INFO   Mar-27 09:30:27,180: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to server...
+[45808] INFO   Mar-27 09:30:27,676: Succeeded
+[45808] INFO   Mar-27 09:30:28,196: 0% complete
+[45808] INFO   Mar-27 09:30:38,750: 100% complete
+[45808] INFO   Mar-27 09:30:38,750: Finished processing users CSV file.
+Created 1 new user.
+
+Imported:
+bsullins@mozilla.com
+
+[45822] DEBUG  Mar-27 09:30:42,640: 
+=====================================================================
+[45822] DEBUG  Mar-27 09:30:42,646: ====>> Starting Tabcmd 7.0 at Wed Mar 27 09:30:42 -0700 2013 <<====
+[45822] DEBUG  Mar-27 09:30:42,646: Build 7000.13.0201.1618
+[45822] DEBUG  Mar-27 09:30:44,546: run as: tabcmd addusers ldap --users /Applications/MAMP/htdocs/tableau-portal/users.csv
+[45822] INFO   Mar-27 09:30:44,564: Continuing previous session
+[45822] INFO   Mar-27 09:30:44,565:     Server:   https://dataviz.mozilla.org/
+[45822] INFO   Mar-27 09:30:44,565:     Username: admin
+[45822] INFO   Mar-27 09:30:44,569: Adding users listed in /Applications/MAMP/htdocs/tableau-portal/users.csv to group ldap...
+[45822] INFO   Mar-27 09:30:45,282: Succeeded
+[45822] INFO   Mar-27 09:30:45,299: Added 1 user to group ldap
