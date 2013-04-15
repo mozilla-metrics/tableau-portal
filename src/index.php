@@ -25,7 +25,7 @@ if (!$trusted_url=login_tableau($_SERVER["PHP_AUTH_USER"],TABLEAU_SERVER,'projec
 				echo '<div id="msg"><h1>Need a Tableau Account?&nbsp;&nbsp;<button class="moz-tableau-login">Create Account</button></h1></div><div id="results"></div><h3>What is Tableau Server?</h3><iframe width="853" height="480" src="http://www.youtube.com/embed/uGgkiBhkRHk" frameborder="0" allowfullscreen></iframe>';
 				
 			} else {
-				echo '<div id="msg"><h1>Sorry, it looks like you\'re not in the "'.LDAP_GROUP.'" LDAP group needed to access Tableau. Please contact your administrator.';
+				echo '<div id="msg"><h1>Sorry, it looks like you\'re not in the "' . LDAP_SEC_GROUP . '" LDAP group needed to access Tableau. Please contact your administrator.';
 
 			}
 	
