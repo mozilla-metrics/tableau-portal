@@ -47,7 +47,7 @@ function email_to_dn($ldapconn, $email) {
 }
 */
 
-/*
+
 function query_users($ldapconn, $filter, $base='', $attributes, $sort=null) {
   $adapter = new MozillaSearchAdapter();
   $conf = $adapter->conf();
@@ -55,7 +55,6 @@ function query_users($ldapconn, $filter, $base='', $attributes, $sort=null) {
   ldap_sort($ldapconn, $search, $sort || $conf["ldap_sort_order"] || "sn");
   return ldap_get_entries($ldapconn, $search);
 }
-*/
 
 /*
 // The logic here is that failure to find out who has permissions to edit
@@ -288,9 +287,15 @@ function get_ldap_cn($user, $debug=0) {
 	}
 }
 
+
+
+
 function add_tableau_user ($username, $pwd, $name, $level, $admin, $publisher, $debug=0) {
 
 	try {
+		
+		//set server
+		$server = PROTOCOL . '://'  . TABLEAU_SERVER;
 
 		//create file
 		$filename = "users";
@@ -318,33 +323,33 @@ function add_tableau_user ($username, $pwd, $name, $level, $admin, $publisher, $
 		fclose($fp);
 
 		//run tabcmd to create user
-		if(!$login = shell_exec('./tabcmdexe login --server ' . TABLEAU_SERVER . ' --username ' . TABLEAU_ADMIN . ' --password ' . TABLEAU_ADMIN_PW)) {
+		if(!$login = shell_exec('./tabcmdexe login --server ' . $server . ' --username ' . TABLEAU_ADMIN . ' --password ' . TABLEAU_ADMIN_PW . ' --no-certcheck')) {
 			throw new Exception('Unable to login to Tableau Server: ' . $login);
 		}
 
 		if($debug!=0){ echo "<h1>Login to Tableau</h1><pre>" . $login . "</pre>"; }
 
 		//create user
-		if(!$createusers = shell_exec('./tabcmdexe createusers "' . $users . '"')) {
+		if(!$createusers = shell_exec('./tabcmdexe createusers "' . $users . '" --no-certcheck')) {
 			throw new Exception('Unable to create users: ' . $createusers);
 		}
 
 		if($debug!=0){ echo "<h1>Creating User</h1><pre>" . $createusers . "</pre>"; }
 
 		//create ldap group (could be switched off by config)
-		if(!$creategroup = shell_exec('./tabcmdexe creategroup "ldap"')) {
+		if(!$creategroup = shell_exec('./tabcmdexe creategroup "ldap" --no-certcheck')) {
 			throw new Exception('Unable to create group "ldap" because: ' . $creategroup);
 		}
 
 		//add user to ldap group
-		if(!$addusers = shell_exec('./tabcmdexe addusers "ldap" --users "' . $users .'"')) {
+		if(!$addusers = shell_exec('./tabcmdexe addusers "ldap" --users "' . $users .'" --no-certcheck')) {
 			throw new Exception('Unable to add users to "ldap" group: ' . $addusers);
 		}
 
 		if($debug!=0){ echo "<h1>Add User to group</h1><pre>" . $createusers . "</pre>"; }
 
 		//delete file
-		unlink($users);	
+		unlink($users);		
 		
 		return true;
 		
@@ -355,17 +360,93 @@ function add_tableau_user ($username, $pwd, $name, $level, $admin, $publisher, $
 	} 
 }
 
-function login_tableau ($user, $host, $home) {
+function login_tableau ($user, $server, $home) {
 	
-	$host = str_replace("https://", "", $host);
-	$host = str_replace("http://", "", $host);
-	
-	if(!$trusted_url=get_default_url($user, $host, $home)){
+	if(!$trusted_url=get_default_url($user, $server, $home)){
+		
+		// debug
+		// echo '<script type="text/javascript">alert("unable to generate ticket for ' . $user . ' at ' . $server .' to page ' . $home .'");</script>';
+		
 		return false;
 	} else {
 		return $trusted_url;
 	}
 }
 
+//check ldap group
+
+function check_ldap_group($user){
+	    try{
+		
+			$server=LDAP_HOST;
+			$admin='uid=' . BIND_USER . ',ou=logins,dc=mozilla';
+			$passwd=BIND_USER_PW;
+			$conn=ldap_connect($server);
+			$ds=ldap_bind($conn, $admin, $passwd);
+			$access=0; //default level of access		
+
+			if (!$ds) { throw new Exception('Unable to connect to LDAP Server');}
+
+			//1st query, get the users mail address
+			$dn = "mail=$user,o=com, dc=mozilla"; //the object itself instead of the top search level as in ldap_search
+			$filter="(objectclass=*)"; // this command requires some filter
+			$justthese = array("mail", "cn", "uid"); //the attributes to pull, which is much more efficient than pulling all attributes if you don't do this
+			$sr=ldap_search($conn, $dn, $filter, $justthese);
+			$entry = ldap_get_entries($conn, $sr);
+			
+			
+			$uid = $entry[0]["uid"][0];
+			$cn = $entry[0]["cn"][0];
+			$mail = $entry[0]["mail"][0];
+			
+			//testing
+			// print_r($entry);
+			// echo "<h1>1st Query</h1>";
+			// echo "cn: " . $entry[0]["cn"][0] . "<br/>";
+			// echo "mail: " . $entry[0]["mail"][0] . "<br/>";
+			// echo "uid: " . $entry[0]["uid"][0] . "<br/>";
+
+
+			//2nd query to get groups
+			$dn = "ou=groups,dc=mozilla";
+			$filter = "(&(member=mail=$mail,o=com,dc=mozilla)(objectClass=groupOfNames))";
+			$sr=ldap_search($conn, $dn, $filter);
+			$entries = ldap_get_entries($conn, $sr);
+			
+			
+			// echo "<h1>2nd Query</h1>";
+			// echo $entries["count"]." entries returned<br/>";
+
+			//print all the groups
+			// foreach($entries as $grp) {
+			// 	
+			// 	echo $grp["cn"][0] . "<br/>";
+			// 
+			// }
+
+
+			//group check
+			foreach($entries as $grps) {
+			            // yes
+			            if ($grps["cn"][0]==LDAP_SEC_GROUP) {$access = 1; break;}
+			}
+			
+			if ($access==1) {
+				// echo "Yes! $cn is in the group: " . LDAP_SEC_GROUP;
+				return true;
+			} else {
+				// echo "NO! $cn is in the group: " . LDAP_SEC_GROUP;
+				return false;
+				
+			}
+
+			
+			ldap_close($conn);
+
+		} catch (Exception $e) {
+			echo 'Oops! I countered the following error: ',  $e->getMessage(), "\n";
+			return $_SERVER["PHP_AUTH_USER"];
+		}
+}
 
 

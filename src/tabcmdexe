@@ -2,4 +2,4 @@
 
 export APPDATA=.
 
-java -jar tabcmd.jar "$@"  
+java -jar tabcmd.jar "$@" 

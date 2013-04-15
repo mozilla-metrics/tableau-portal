@@ -10,15 +10,31 @@ include 'tableau_trusted.php';
 
 <?php
 
-
 //Log the user in or add them to the server if the ADD_TABLEAU_USERS bit is set to TRUE in the config-local.php file
 if (!$trusted_url=login_tableau($_SERVER["PHP_AUTH_USER"],TABLEAU_SERVER,'projects')) {
 	
 	//add user to the server if config-local.php has bit flipped
 	if (ADD_TABLEAU_USERS) {
 		
-		echo '<div id="msg"><h1>Need a Tableau Account?&nbsp;&nbsp;<button class="moz-tableau-login">Create Account</button></h1></div><h3>What is Tableau?</h3><iframe width="560" height="315" src="http://www.youtube.com/embed/OaQdWeFpov8" frameborder="0" allowfullscreen></iframe>';
+		//are we checking for specific LDAP group membership?
+		if (LDAP_GROUP_CHECK) {
+			
+			//Check the ldap group set in the local-config.php file
+			if (check_ldap_group($_SERVER["PHP_AUTH_USER"])) {
 
+				echo '<div id="msg"><h1>Need a Tableau Account?&nbsp;&nbsp;<button class="moz-tableau-login">Create Account</button></h1></div><div id="results"></div><h3>What is Tableau Server?</h3><iframe width="853" height="480" src="http://www.youtube.com/embed/uGgkiBhkRHk" frameborder="0" allowfullscreen></iframe>';
+				
+			} else {
+				echo '<div id="msg"><h1>Sorry, it looks like you\'re not in the "'.LDAP_GROUP.'" LDAP group needed to access Tableau. Please contact your administrator.';
+
+			}
+	
+		} else {
+			
+			echo '<div id="msg"><h1>Need a Tableau Account?&nbsp;&nbsp;<button class="moz-tableau-login">Create Account</button></h1></div><div id="results"></div><h3>What is Tableau Server?</h3><iframe width="853" height="480" src="http://www.youtube.com/embed/uGgkiBhkRHk" frameborder="0" allowfullscreen></iframe>';
+		}
+		
+	//if you are not adding them automatically this message will show by default
 	} else {
 
 		//print error message with links to fix
@@ -26,6 +42,8 @@ if (!$trusted_url=login_tableau($_SERVER["PHP_AUTH_USER"],TABLEAU_SERVER,'projec
 
 	}
 	
+	
+	//we've got a ticket and will log the user in now.
 } else {
 	echo '<h1>Tableau should load shortly...</h1><meta http-equiv="refresh" content="0;url=' . $trusted_url . '">';
 }

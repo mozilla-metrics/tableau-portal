@@ -21,6 +21,7 @@
 			"add_user.php",
 		  function(msg){
 			$("#msg").html('<h3>Account created! Refresh this page to login whenever you are ready.</h3>');
+			$("#results").html(msg);
 		  });
 
 	  });
