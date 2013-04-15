@@ -20,5 +20,3 @@ define('ADD_TABLEAU_USERS', false);
 define('TABLEAU_ADMIN', MyAdminAccount);
 
 define('TABLEAU_ADMIN_PW', MyAdminPassword);
-
-define('TABLEAU_SERVER', "https://mytableauserver.com");

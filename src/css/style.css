@@ -1,7 +1,7 @@
 
 * {
-  margin: 0;
-  padding: 0;
+  margin: 5px;
+  padding: 5px;
   font-family: inherit;
   font-size: 100%;
   font-weight: inherit;
@@ -20,6 +20,58 @@
   font-weight: bold;
   src: url(fonts/DroidSans-Bold.ttf) format("truetype");
 }
+
+/*Tableau LDAP Additions*/
+
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 28px;
+}
+
+#msg {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width:100%;
+}
+
+#msg a {
+	color:#ffffff;
+	text-decoration: underline;
+}
+
+button.moz-tableau-login {
+							background-color:#e66000;
+							-moz-border-radius:6px;
+							-webkit-border-radius:6px;
+							border-radius:6px;
+							border:1px solid #dcdcdc;
+							display:inline-block;
+							color:#ffffff;
+							font-family:arial;
+							font-size:16px;
+							font-weight:bold;
+							padding:10px 20px;
+							text-decoration:none;
+						}.moz-tableau-login:hover {
+							background-color:#ff9500;
+						}.moz-tableau-login:active {
+							position:relative;
+							top:1px;
+						}
+
+
+
+
+
+/* Phoenbook CSS */
 
 html {
   font: 16px "Lucida Grande", "Droid Sans", "Trebuchet MS", sans-serif;
