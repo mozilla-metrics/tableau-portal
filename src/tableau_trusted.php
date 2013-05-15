@@ -43,19 +43,26 @@ function get_trusted_url($user,$server,$view_url,$params) {
 Function get_trusted_ticket($wgserver, $user, $remote_addr) {
   $params = array(
     'username' => $user
-   , 'client_ip' => $remote_addr
+   // , 'client_ip' => $remote_addr
   );
 
   $server = PROTOCOL . "://$wgserver/trusted";
-	
-  $resp =  http_parse_message(http_post_fields($server, $params))->body;
 
-	//testing
-	 // print '<script type="text/javascript">alert("My addy ' . $_SERVER['SERVER_ADDR'] . ' is getting response from server ' . $server . ' for user ' . $user . ' of ' . print_r($resp) . '");</script>';
-	 	
-	//print_r ($resp);
 	
-	//actually return it
+		$resp =  http_parse_message(http_post_fields($server, $params))->body;
+
+		//try using curl instead
+	
+	// $ch = curl_init($server);
+
+	// curl_setopt($ch, CURLOPT_POST, 1);
+	// curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+	// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	// $resp = curl_exec($ch);
+
+	// curl_close($ch);
+	
+	
 	return $resp;
 
 }

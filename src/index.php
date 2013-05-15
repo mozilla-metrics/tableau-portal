@@ -22,7 +22,8 @@ if (!$trusted_url=login_tableau($_SERVER["PHP_AUTH_USER"],TABLEAU_SERVER,'projec
 			//Check the ldap group set in the local-config.php file
 			if (check_ldap_group($_SERVER["PHP_AUTH_USER"])) {
 
-				echo '<div id="msg"><h1>Need a Tableau Account?&nbsp;&nbsp;<button class="moz-tableau-login">Create Account</button></h1></div><div id="results"></div><h3>What is Tableau Server?</h3><iframe width="853" height="480" src="http://www.youtube.com/embed/uGgkiBhkRHk" frameborder="0" allowfullscreen></iframe>';
+					echo '<div id="msg"><h3>Unable to log you in, do you need a Tableau Account?</h3><p><button class="moz-tableau-login">Create Account</button>&nbsp;This could take up to 2 minutes.</p></div><div id="results"></div><div id="tableau-video"><h3>Checkout this video while you wait...</h3><iframe width="853" height="480" src="http://www.youtube.com/embed/uGgkiBhkRHk" frameborder="0" allowfullscreen></iframe></div>';
+				
 				
 			} else {
 				echo '<div id="msg"><h1>Sorry, it looks like you\'re not in the "' . LDAP_SEC_GROUP . '" LDAP group needed to access Tableau. Please contact your administrator.';
@@ -31,7 +32,8 @@ if (!$trusted_url=login_tableau($_SERVER["PHP_AUTH_USER"],TABLEAU_SERVER,'projec
 	
 		} else {
 			
-			echo '<div id="msg"><h1>Need a Tableau Account?&nbsp;&nbsp;<button class="moz-tableau-login">Create Account</button></h1></div><div id="results"></div><h3>What is Tableau Server?</h3><iframe width="853" height="480" src="http://www.youtube.com/embed/uGgkiBhkRHk" frameborder="0" allowfullscreen></iframe>';
+					echo '<div id="msg"><h3>Unable to log you in, do you need a Tableau Account?</h3><p><button class="moz-tableau-login">Create Account</button>&nbsp;This could take up to 2 minutes.</p></div><div id="results"></div><div id="tableau-video"><h3>Checkout this video while you wait...</h3><iframe width="853" height="480" src="http://www.youtube.com/embed/uGgkiBhkRHk" frameborder="0" allowfullscreen></iframe></div>';
+						
 		}
 		
 	//if you are not adding them automatically this message will show by default

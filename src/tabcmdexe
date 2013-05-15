@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export APPDATA=.
-
-java -jar tabcmd.jar "$@" 

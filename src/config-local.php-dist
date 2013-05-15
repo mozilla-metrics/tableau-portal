@@ -6,7 +6,7 @@
  */
 
 // LDAP
-define('LDAP_HOST', 'your-ldap-host.com');
+define('LDAP_HOST', 'myldaphost.com');
 
 // Memcache (port number is mandatory)
 define("MEMCACHE_ENABLED", true);
@@ -15,21 +15,8 @@ $memcache_servers = array(
 );
 define('MEMCACHE_PREFIX', 'tableau-portal');
 
-define('ADD_TABLEAU_USERS', true); //this tells the app to show the option for users to create accounts
+define('ADD_TABLEAU_USERS', false);
 
-define('TABLEAU_ADMIN', "MyAdmin"); //tableau server admin username
+define('TABLEAU_ADMIN', MyAdminAccount);
 
-define('TABLEAU_ADMIN_PW', "MyPassword"); //tableau server admin password
-
-define('TABLEAU_SERVER', "mytableauserver.com"); //your tableau server URL
-
-define('PROTOCOL', "https"); //are you running SSL?
-
-define('BIND_USER', "my-ldap-bind-user"); //LDAP User needed to check Group Membership
-
-define('BIND_USER_PW', "my-ldap-bind-use-password"); //LDAP User password for checking group membership
-
-define('LDAP_GROUP_CHECK', true); //should there be a group check? If no then any user whom does not have an account will be able to create one
-
-define('LDAP_SEC_GROUP', "tableau-users-group"); //if you're doing a group check, you need to tell the app which group to check
-
+define('TABLEAU_ADMIN_PW', MyAdminPassword);

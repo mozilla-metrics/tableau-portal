@@ -16,7 +16,8 @@
 		// alert("starting ajax call");
 
 		$("#msg").html('<h3>Creating account <img src="img/ajax-loader.gif" style="vertical-align:bottom;"/></h3>');
-			
+		$("#tableau-video").css("visibility","visible");
+					
 		$.post(
 			"add_user.php",
 		  function(msg){

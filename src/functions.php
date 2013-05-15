@@ -293,6 +293,8 @@ function get_ldap_cn($user, $debug=0) {
 function add_tableau_user ($username, $pwd, $name, $level, $admin, $publisher, $debug=0) {
 
 	try {
+	
+		set_time_limit(0); //set timeout to unlimited since tabcmd is so slow
 		
 		//set server
 		$server = PROTOCOL . '://'  . TABLEAU_SERVER;
@@ -322,27 +324,29 @@ function add_tableau_user ($username, $pwd, $name, $level, $admin, $publisher, $
 
 		fclose($fp);
 
-		//run tabcmd to create user
-		if(!$login = shell_exec('./tabcmdexe login --server ' . $server . ' --username ' . TABLEAU_ADMIN . ' --password ' . TABLEAU_ADMIN_PW . ' --no-certcheck')) {
+		// Windows version
+		
+		
+		if(!$login = exec('"' . TABCMD . 'tabcmd" login --server ' . $server . ' --username ' . TABLEAU_ADMIN . ' --password ' . TABLEAU_ADMIN_PW . ' --no-certcheck')) {
 			throw new Exception('Unable to login to Tableau Server: ' . $login);
 		}
 
 		if($debug!=0){ echo "<h1>Login to Tableau</h1><pre>" . $login . "</pre>"; }
 
 		//create user
-		if(!$createusers = shell_exec('./tabcmdexe createusers "' . $users . '" --no-certcheck')) {
+		if(!$createusers = shell_exec('"' . TABCMD . 'tabcmd"  createusers "' . $users . '" --no-certcheck')) {
 			throw new Exception('Unable to create users: ' . $createusers);
 		}
 
 		if($debug!=0){ echo "<h1>Creating User</h1><pre>" . $createusers . "</pre>"; }
 
 		//create ldap group (could be switched off by config)
-		if(!$creategroup = shell_exec('./tabcmdexe creategroup "ldap" --no-certcheck')) {
+		if(!$creategroup = shell_exec('"' . TABCMD . 'tabcmd"  creategroup "ldap" --no-certcheck')) {
 			throw new Exception('Unable to create group "ldap" because: ' . $creategroup);
 		}
 
 		//add user to ldap group
-		if(!$addusers = shell_exec('./tabcmdexe addusers "ldap" --users "' . $users .'" --no-certcheck')) {
+		if(!$addusers = shell_exec('"' . TABCMD . 'tabcmd"  addusers "ldap" --users "' . $users .'" --no-certcheck')) {
 			throw new Exception('Unable to add users to "ldap" group: ' . $addusers);
 		}
 
@@ -358,6 +362,44 @@ function add_tableau_user ($username, $pwd, $name, $level, $admin, $publisher, $
 		//delete file
 		unlink($users);	
 	} 
+		
+		
+		//run tabcmd to create user
+		// if(!$login = shell_exec('./tabcmdexe login --server ' . $server . ' --username ' . TABLEAU_ADMIN . ' --password ' . TABLEAU_ADMIN_PW . ' --no-certcheck')) {
+			// throw new Exception('Unable to login to Tableau Server: ' . $login);
+		// }
+
+		// if($debug!=0){ echo "<h1>Login to Tableau</h1><pre>" . $login . "</pre>"; }
+
+		// //create user
+		// if(!$createusers = shell_exec('./tabcmdexe createusers "' . $users . '" --no-certcheck')) {
+			// throw new Exception('Unable to create users: ' . $createusers);
+		// }
+
+		// if($debug!=0){ echo "<h1>Creating User</h1><pre>" . $createusers . "</pre>"; }
+
+		// //create ldap group (could be switched off by config)
+		// if(!$creategroup = shell_exec('./tabcmdexe creategroup "ldap" --no-certcheck')) {
+			// throw new Exception('Unable to create group "ldap" because: ' . $creategroup);
+		// }
+
+		// //add user to ldap group
+		// if(!$addusers = shell_exec('./tabcmdexe addusers "ldap" --users "' . $users .'" --no-certcheck')) {
+			// throw new Exception('Unable to add users to "ldap" group: ' . $addusers);
+		// }
+
+		// if($debug!=0){ echo "<h1>Add User to group</h1><pre>" . $createusers . "</pre>"; }
+
+		// //delete file
+		// unlink($users);		
+		
+		// return true;
+		
+	// } catch (Exception $e) {
+		// echo "Oops! Ran into a speed bump: " . $e;
+		// //delete file
+		// unlink($users);	
+	// } 
 }
 
 function login_tableau ($user, $server, $home) {
@@ -369,6 +411,7 @@ function login_tableau ($user, $server, $home) {
 		
 		return false;
 	} else {
+		echo "<script>alert($trusted_url);</script>";
 		return $trusted_url;
 	}
 }
