@@ -411,7 +411,7 @@ function login_tableau ($user, $server, $home) {
 		
 		return false;
 	} else {
-		echo "<script>alert($trusted_url);</script>";
+//		echo "<script>alert($trusted_url);</script>";
 		return $trusted_url;
 	}
 }
