@@ -300,7 +300,7 @@ function add_tableau_user ($username, $pwd, $name, $level, $admin, $publisher, $
 		$server = PROTOCOL . '://'  . TABLEAU_SERVER;
 
 		//create file
-		$filename = "users";
+		$filename = "users" . rand();
 		$users = getcwd() . '/'.$filename.'.csv';
 		//create new file
 		$filehandle = fopen($users, 'w') or die("can't open file");
