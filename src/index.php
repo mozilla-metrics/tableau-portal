@@ -6,6 +6,11 @@ require_once('templates/header.php');
 include 'tableau_trusted.php';
 
 
+// log destination as session var to preserve the page which the user was trying to visit
+
+$_SESSION['destination'] = $_GET['destination'];
+
+
 ?>
 
 <?php
@@ -47,7 +52,7 @@ if (!$trusted_url=login_tableau($_SERVER["PHP_AUTH_USER"],TABLEAU_SERVER,'projec
 	
 	//we've got a ticket and will log the user in now.
 } else {
-	echo '<h1>Tableau should load shortly...</h1><meta http-equiv="refresh" content="0;url=' . $trusted_url . '">';
+	echo '<h1>Tableau should load shortly...</h1><meta http-equiv="refresh" content="0;url=' . $trusted_url . '/' . $_SESSION['destination'] . '">';
 }
 
 echo '</div>';
